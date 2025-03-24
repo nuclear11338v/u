@@ -343,17 +343,6 @@ async def handle_messages(client, message):
     owner_msg = f"**📩 New request from {user_tag}**\n🗒️ Query: {prompt[:100]}..."
     await client.send_message(OWNER_ID, owner_msg, parse_mode="markdown", disable_web_page_preview=True)
 
-# Developer credit check
-original_text = """THIS FILE IS MADE BY -> @MR_ARMAN_OWNER\nTHIS FILE IS MADE BY -> @MR_ARMAN_OWNER\nTHIS FILE IS MADE BY -> @MR_ARMAN_OWNER\n\nDM TO BUY PAID FILES"""
-expected_hash = "dfcb19d1592200db6b5202025e4b67ba6fc43d9dad9e3eb26e2edb3db71b1921"
-generated_hash = hashlib.sha256(original_text.encode()).hexdigest()
-
-if generated_hash != expected_hash:
-    print("Please don't change the developer name")
-    sys.exit(1)
-else:
-    print(original_text)
-
 # Start the bot
 print("Bot is running...")
 app.run()
